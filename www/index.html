@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 1 JS</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="row">
+		<div class="block">
+			<h2>Переменные</h2>
+			<h3>-1-</h3>
+			<p>
+				<span>var price,</span>
+				<span>maxNumber,</span>
+				<span>userName;</span>
+			</p>
+			<p>const minPrice;</p>
+
+			<h3>-2-</h3>
+			<p>undefined;</p>
+			<p>"string № 2;"</p>
+
+			<h3>-3-</h3>
+			<p>Error: test is not defined;</p>
+			<p>SyntaxError: Identifier 'x' has already been declared - <i>для переменных let и const</i></p>
+		</div>
+
+		<div class="block">
+			<h2>Строки</h2>
+			<p>let string = "some test string";</p>
+			<h3>-1-</h3>
+			<p>console.log(string[0], string[string.length-1]);</p>
+			<h3>-2-</h3>
+			console.log(string[0].toUpperCase(), string[string.length-1].toUpperCase());
+			<h3>-3-</h3>
+			console.log(string.indexOf('string')); = 10
+			<h3>-4-</h3>
+			console.log(string.lastIndexOf(' ')); = 9
+			<h3>-5-</h3>
+			console.log(string.substr(5, 4)); = test
+			<h3>-6-</h3>
+			console.log(string.substring(5, 9)); = test
+			<h3>-7-</h3>
+			console.log(string.substring(0, [string.length-6])); = some test
+			<h3>-8-</h3>
+			<p>var a = '20';</p>
+			<p>var b = '16';</p>
+			<p>var str = a + b;</p>
+			<p>console.log(str);</p>
+		</div>
+
+		<div class="block">
+			<h2>Числа</h2>
+			<h3>-1-</h3>
+			<p>console.log(Math.PI.toFixed(2));</p>
+			<h3>-2-</h3>
+			<p>console.log(Math.min(15, 11, 12, 16, 51, 12, 13, 51), Math.max(15, 11, 12, 16, 51, 12, 13, 51));</p>
+			<h3>-3-</h3>
+			<p>console.log(Math.random().toFixed(2));</p>
+			<p>var x = 180;</p>
+			<p>console.log(Math.floor (Math.random() * x));</p>
+
+			<h3>-4-</h3>
+			<p>var result = 0.6 + 0.7;</p>
+			<p>console.log (result.toFixed(1));</p>
+			<h3>-5-</h3>
+			<p>var baks = '100%';</p>
+			<p>
+			console.log(parseInt(baks));</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="block">
+			<h2>Объекты</h2>
+			<h3>-1-</h3>
+			<p>var obj = {product: 'iphone'}</p>
+			<h3>-2-</h3>
+			obj.price = 1000;
+			<h3>-3-</h3>
+			obj.details = {	model: '', color: '',};
+		</div>
+
+		<div class="block">
+			<h2>Присваивания</h2>
+			<h3>-1-</h3>
+			<p>a + = 10: b* = 18; c - = 10;</p>
+			<p>x + = a; y * = z; i * = 5 * y;</p>
+			<h3>-2-</h3>
+			<p>var z = 6;</p>
+			<p>console.log (Math.pow(z, 2));</p>
+		</div>
+	</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<!-- all js init -->
+<script src="js/plugin.js"></script>
+</body>
+</html>

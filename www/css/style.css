@@ -1,0 +1,42 @@
+body {
+	background: lightgreen;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 20px;
+}
+
+.block {
+	display: flex;
+	width: 30%;
+	align-items: center;
+	flex-direction: column;
+	border: solid 3px green;
+	border-radius: 10px;
+	padding: 20px;
+	background: lightyellow;
+}
+.block p {
+	display: flex;
+	flex-direction: column;
+	margin: 5px 0;
+}
+.block span + span {
+	margin-left: 25px;
+}
+
+h3 {
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+
+h2 {
+	background: bisque;
+}
+
+p {
+	font-size: 18px;
+}
