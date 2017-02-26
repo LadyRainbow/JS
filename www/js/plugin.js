@@ -145,3 +145,222 @@ joinUpperChar ('JavaScript is a pretty good language');
 for (var i = 1; i<=15; i++) {
 			console.log(i++);
 }
+
+
+// ДЗ УРОК № 3 JavaScript
+// ЗАДАЧИ ПО ФУНКЦИЯМ
+// 1.
+function getDobutok () {
+    if (arguments.length > 0){
+    var arr = 1;
+    var max = arguments.length;
+    for (var i = 0 ; i < max ; i++) {
+        arr *= arguments[i];
+    }
+    return arr;
+    } else {
+     return 0;
+    }
+ }
+getDobutok (14, 45, 171);
+
+// ЗАДАЧИ ПО МАССИВАМ
+// 1.
+function doubleArr (arr) {
+    var arrLength = arr.length;
+    for (var i = 0 ; i < arrLength ; i++) {
+        arr.push(arr[i]);
+    }
+
+    return arr;
+}
+doubleArr (['tyure', 2, 'five', 25, 84, 12]);
+
+
+// 2.
+function getLastEl (arr) {
+
+    var lastEl = arr[arr.length-1];
+    return lastEl;
+}
+getLastEl ([56, 45, 18, 753, 146, 218]);
+
+
+// 3.
+function getArr (N) {
+    var arr = [];
+    for (var i = 1 ; i <= N ; i++) {
+         arr.push(i);
+    }
+
+    return arr;
+}
+getArr (10);
+
+
+// 4.
+function getArr () {
+    var arr = [];
+    for (var i = 0 ; i < arguments.length ; i++) {
+         arguments[i].splice(0, 1);
+         arr.push(arguments[i]);
+
+    }
+    return arr;
+}
+getArr (['tyure', 2, 'five', 25], [15, 146], ['tyure', '2pop', 'five', 'Hahapop']);
+
+// ЗАДАЧИ ПО МАССИВАМ-2
+// 1.
+function arrSort (prev, next) {
+    if (prev < next) {
+        return true;
+    }
+   else {
+        return false;
+    }
+}
+function sortStr (string) {
+    var arr = string.split('');
+    var newArr = arr.sort(arrSort);
+    var newStr = newArr.join('');
+    return newStr;
+}
+
+sortStr ('abdcqwerty');
+
+
+// 2.
+function arrSort (prev, next) {
+    if (prev < next) {
+        return true;
+    }
+   else {
+        return false;
+    }
+}
+
+function getSortArr () {
+    var arr = arguments[0];
+    var newArr = arr.sort(arrSort);
+    return newArr;
+}
+
+ getSortArr ([2, 4, 7, 1, -2, 10, -9]);
+
+
+// 3.
+function getNewArr (arr, f, s) {
+    var arrey = arr;
+    var sec = s + 1;
+    var newArr = arrey.slice(f, sec);
+    return newArr;
+}
+getNewArr (['f', 'kk', 'jgjg', 'l', 'v', 'o', 'p'], 2, 4);
+
+
+// 4.
+function doubleArr (arr) {
+    var newArr = arr.concat(arr);
+    return newArr;
+}
+doubleArr (['tyure', 2, 'five', 25]);
+
+
+// 5.
+var cutIt = [1, 2, 3, 4, 5];
+cutIt.splice(2, 2);
+console.log(cutIt);
+
+
+// 6.
+ var cutPush = [1, 2, 3, 4, 5];
+cutPush.splice(2, 2, 'three', 'four');
+console.log(cutPush);
+
+
+// 7.
+function getNewArr () {
+    var arr = arguments[0];
+    arr.splice(2, 0, "learning");
+    return arr;
+}
+ getNewArr (['I\'ve', 'been', 'JavaScript', 'since', 'last', 'autumn']);
+
+
+// 8.
+function arrLengthSort (prev, next) {
+	 if (prev.length > next.length) {
+			 return true;
+	 }
+	else {
+			 return false;
+	 }
+}
+function getSortArr (arr) {
+	 var newArr = arr.sort(arrLengthSort);
+	 return newArr;
+}
+getSortArr ([['ght', 'hjy', 'frty'], ['frty', 7], [2, 4, -2, 10, -9]]);
+
+
+// 9.
+var oldArr = ['tyure', 2, 'five', 25];
+
+function copyArr (arr) {
+    var newArr = arr.concat();
+    return newArr;
+}
+
+copyArr (oldArr);
+
+var newArr = copyArr (oldArr);
+console.log(newArr + ' - new');
+
+
+// 10.
+function arrSortObj (prev, next) {
+    if (prev.info.cores > next.info.cores) {
+        return true;
+    }
+   if (prev.info.cores < next.info.cores) {
+        return false;
+    }
+}
+var arrObj = [{cpu: 'intel', info: {cores: 2, cache: 3}},
+              {cpu: 'intel', info: {cores: 4, cashe: 4}},
+              {cpu: 'intel', info: {cores: 1, cache: 1}},
+              {cpu: 'intel', info: {cores: 3, cache: 2}},
+              {cpu: 'intel', info: {cores: 4, cache: 2}}
+              ];
+ var newArrObj = arrObj.sort(arrSortObj);
+ console.log(newArrObj);
+
+
+// 11.
+function sortPrice (list, min, max) {
+    var changeList = [];
+    for (var i = 0; i < list.length; i++) {
+       if (list[i]['price'] >= min && list[i]['price'] <= max){
+            changeList.push(list[i]);
+        }
+    }
+
+        function sortPriceToLow (prev, next) {
+    return prev.price - next.price;
+}
+    var sortChangeList = changeList.sort(sortPriceToLow);
+   return sortChangeList;
+}
+
+var product = [{title: 'prod1', price: 5.2},
+                {title: 'prod2', price: 0.18},
+                {title: 'prod3', price: 15},
+                {title: 'prod4', price: 25},
+                {title: 'prod5', price: 18.9},
+                {title: 'prod6', price: 8},
+                {title: 'prod7', price: 19},
+                {title: 'prod8', price: 63},
+]
+
+sortPrice (product, 15, 30);
