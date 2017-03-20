@@ -164,6 +164,115 @@ function getDobutok () {
  }
 getDobutok (14, 45, 171);
 
+
+// 2.
+function factorial (limit) {
+    var value;
+    if (limit > 1) {
+        value = limit*factorial(limit-1);
+    } else {
+        value = limit;
+    }
+    return value;
+}
+
+factorial (10);
+
+
+// 3.
+function reverseString (str) {
+    var value = '';
+   for (var i = str.length-1 ; i >= 0 ; i--) {
+       value += str[i];
+   }
+    return value;
+}
+
+reverseString ('Marina');
+
+
+// 4.
+function getCodeStringFromText (str) {
+	var newStr= '';
+	for (var i = 0; i < str.length; i++){
+		if (i != str.length-1) {
+			newStr += str.charCodeAt(i) + ' ';
+		} else {
+			newStr += str.charCodeAt(i);
+		}
+	}
+	return newStr;
+}
+getCodeStringFromText ('hello');
+
+
+// 5.
+function printChars (string, i=0) {
+
+	console.log(string[i]);
+	if (i < string.length) {
+		i+=1;
+        printChars(string, i);
+	}
+
+}
+printChars ('string');
+
+
+// 6-1.
+function firstF (arr, func) {
+	var newStr = 'New Value: ';
+	for (var i = 0; i<arr.length; i++){
+		newStr += func(arr[i]);
+	}
+	return newStr;
+}
+
+function secF (symbol) {
+	return symbol.toUpperCase();
+}
+firstF (['my', 'name', 'is'], secF);
+
+// 6-2.
+function firstF (arr, func) {
+	var newStr = 'New Value: ';
+	for (var i = 0; i<arr.length; i++){
+		if (i != arr.length-1) {
+			newStr += func(arr[i])+', ';
+		} else {
+			newStr += func(arr[i]);
+		}
+	}
+	return newStr;
+	}
+
+function secF (ind) {
+	return ind*10;
+}
+
+firstF ([10, 20, 30], secF);
+
+// 6-3.
+function secF (ind) {
+	return ind['name']+' is '+ ind['age'];
+}
+
+firstF ([{age: 45, name: 'Jhon'}, {age: 20, name: 'Aaron'}], secF);
+
+// 6-4.
+function secF (ind) {
+	return ind.split("").reverse().join("");
+}
+
+firstF (['abc', '123'], secF);
+
+// 6-5.
+function secF (ind) {
+	return ind+5+'`';
+}
+
+firstF ([1, 2, 3], secF);
+
 // ЗАДАЧИ ПО МАССИВАМ
 // 1.
 function doubleArr (arr) {
