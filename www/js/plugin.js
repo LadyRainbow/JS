@@ -473,3 +473,41 @@ var product = [{title: 'prod1', price: 5.2},
 ]
 
 sortPrice (product, 15, 30);
+
+
+// Date
+// 1.
+function getDayFromYear (year){
+var date = new Date(year, 0);
+var options = {
+  weekday: 'long',
+ };
+return date.toLocaleString("ru", options);
+}
+getDayFromYear(2017);
+
+// 2.
+function getDayFromString (str){
+var dateParse = str.split(".").reverse().join("-");
+var date = Date.parse(dateParse);
+var options = {
+  weekday: 'long',
+ };
+var newDate = new Date(date);
+var getDay = newDate.toLocaleString("ru", options);
+return getDay;
+}
+getDayFromString("29.03.1985");
+
+
+// 3.
+function getDayFromString (currentDateTime){
+var startTimeOfCurrentYear = (new Date(currentDateTime.getFullYear(), 0, 1)).getTime();
+var currentTime = currentDateTime.getTime();
+var pastTimeOfStartCurrentYear = currentTime - startTimeOfCurrentYear;
+var hourOfMillisecs = 3600000;
+var hoursOfOneWeek = 168;
+var fullWeeksTillNow = Math.floor(pastTimeOfStartCurrentYear / hourOfMillisecs / hoursOfOneWeek);
+return 'С начала года до сегодняшней даты прошло полных '+ fullWeeksTillNow +' недель';
+}
+getDayFromString(new Date());
